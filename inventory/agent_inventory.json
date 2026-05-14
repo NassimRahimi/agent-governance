@@ -1,0 +1,50 @@
+{
+  "version": "1.0",
+  "agents": [
+    {
+      "agent_id": "agent.procurement-intake.v1",
+      "name": "Procurement Intake Agent",
+      "purpose": "Reads an approved procurement request and writes a structured local summary.",
+      "owner": "AI Platform Team",
+      "environments": ["dev"],
+      "risk_level": "medium",
+      "tool_access": [
+        {
+          "name": "read_local_text",
+          "description": "Read approved local request file.",
+          "actions": ["read"]
+        },
+        {
+          "name": "write_local_json",
+          "description": "Write approved structured output file.",
+          "actions": ["write"]
+        }
+      ],
+      "data_access": {
+        "reads": ["data/procurement_request.txt"],
+        "writes": ["out/procurement_summary.json"]
+      },
+      "requires_human_review": false
+    },
+    {
+      "agent_id": "agent.vendor-research.v1",
+      "name": "Vendor Research Agent",
+      "purpose": "Represents a read-only market research capability for vendor information.",
+      "owner": "AI Platform Team",
+      "environments": ["dev"],
+      "risk_level": "low",
+      "tool_access": [
+        {
+          "name": "search_vendor_catalog",
+          "description": "Read-only vendor catalog lookup.",
+          "actions": ["read"]
+        }
+      ],
+      "data_access": {
+        "reads": ["data/vendor_catalog.json"],
+        "writes": []
+      },
+      "requires_human_review": false
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+Public-safe original agent governance demo.
+
+Included files:
+- README.md
+- LICENSE
+- requirements.txt
+- .gitignore
+- .env.example
+- main.py
+- agent_models.py
+- agent_definitions.py
+- agent_io.py
+- guardrails.py
+- observability.py
+- audit_logs.py
+- readiness_check.py
+- state_utils.py
+- data/procurement_request.txt
+- inventory/agent_inventory.json
+- .github/workflows/main.yml
+
+Excluded intentionally:
+- LinkedIn Learning source code
+- LinkedIn Learning transcripts
+- LinkedIn Learning exercise files
+- LinkedIn Learning LICENSE / NOTICE
+- runtime logs and generated output

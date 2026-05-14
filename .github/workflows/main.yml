@@ -1,0 +1,23 @@
+name: Python CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Compile Python files
+        run: python -m py_compile *.py
+      - name: Run allowed-path smoke test
+        run: |
+          python main.py --mode allow
+          python audit_logs.py --log logs/agent_events.jsonl
+          python readiness_check.py --inventory inventory/agent_inventory.json --log logs/agent_events.jsonl
