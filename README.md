@@ -1,6 +1,6 @@
 # Agent Governance Runtime Controls Demo
 
-A public-safe, original Python demo for governing AI-agent workflows with inventory, runtime guardrails, audit logs, and production-readiness checks.
+A Python demo for governing AI-agent workflows with inventory, runtime guardrails, audit logs, and production-readiness checks.
 
 The demo is intentionally small and deterministic. It does not require an LLM API key. The goal is to show the control pattern clearly:
 
@@ -93,4 +93,4 @@ This demo uses a simple procurement-intake workflow:
 
 ## Public-use note
 
-This is an original implementation created for portfolio and learning purposes. 
+This is an original implementation created for portfolio.
