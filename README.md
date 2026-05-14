@@ -93,4 +93,4 @@ This demo uses a simple procurement-intake workflow:
 
 ## Public-use note
 
-This is an original implementation created for portfolio and learning purposes. It does not include third-party course source code, transcripts, or exercise files.
+This is an original implementation created for portfolio and learning purposes. 
