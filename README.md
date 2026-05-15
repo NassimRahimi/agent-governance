@@ -93,4 +93,4 @@ This demo uses a simple procurement-intake workflow:
 
 ## Public-use note
 
-This is an original implementation created for portfolio.
+Demonstration repo. Patterns shown here mirror controls used in regulated enterprise environments.
