@@ -18,10 +18,8 @@ This demo is a small, runnable expression of three controls every AI governance 
 
 The repo is intentionally deterministic and requires no LLM API key, so the control pattern is the focus, not the model.
 
-<<<<<<< HEAD
-=======
+![Demo: allowed run, blocked run, audit-log scan, readiness gate](docs/demo.png)
 
->>>>>>> 8793426 (Update documentation)
 ## What this demonstrates
 
 - Agent inventory as the source of governance metadata
