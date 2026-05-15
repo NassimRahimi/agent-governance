@@ -8,6 +8,16 @@ The demo is intentionally small and deterministic. It does not require an LLM AP
 agent inventory → run plan → runtime guardrail → controlled tool execution → audit log → readiness gate
 ```
 
+## Why this matters for AI Governance
+
+This demo is a small, runnable expression of three controls every AI governance function asks for in production:
+
+- **Risk classification → readiness gate.** `readiness_check.py` decides whether a run is acceptable for promotion based on artifacts (inventory, audit log, blocked-action evidence), not opinion. Blocked behavior must be reviewed before promotion — the same risk-proportionate gate logic used to decide which AI systems can run unattended and which require human review.
+- **Runtime controls → guardrails + allow-lists.** `guardrails.py` enforces read/write allow-lists, path containment, and tool permissions before any action runs. Agent task logic and governance controls are kept separate, so the same guardrail layer can be reused across agents without rewriting agent code.
+- **Auditability → JSONL event log with run_id.** `audit_logs.py` writes structured JSONL events with `run_id`, `operation_id`, attempted action, decision (allowed / blocked), and outcome. The log is scannable for violations, risky tools, and anomalies — the evidence trail a regulator, internal audit, or model-risk function actually needs.
+
+The repo is intentionally deterministic and requires no LLM API key, so the control pattern is the focus, not the model.
+
 ## What this demonstrates
 
 - Agent inventory as the source of governance metadata
